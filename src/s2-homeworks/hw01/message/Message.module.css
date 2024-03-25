@@ -1,25 +1,48 @@
 .message {
-
+    display: inline-block;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-left: 250px;
+    padding-top: 30px;
 }
 
 .imageAndText {
-
+    display: contents;
+    align-items: center;
+    margin-bottom: 5px;
+    position: relative;
 }
 
 .imageAndText img {
-
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
-
 .text {
-
+    flex-grow: 1;
+    position: relative; /* Позиционируем элемент для использования псевдоэлемента */
+    border-radius: 10px;
+    padding: 10px;
+    background-color: aliceblue;
+    display: inline-block;
+    width: auto;
 }
 
-.text:after {
-
+.text::before {
+    content: ''; /* Необходимо для отображения псевдоэлемента */
+    position: absolute; /* Абсолютное позиционирование относительно блока */
+    bottom: 0; /* Расположение хвостика относительно нижней границы блока */
+    left: -9px; /* Расположение хвостика относительно левой границы блока */
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent; /* Создаем треугольник, определяющий хвостик */
+    border-bottom: 20px solid aliceblue; /* Создаем треугольник, определяющий хвостик */
 }
 
 .name {
-
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .messageText {
@@ -27,5 +50,8 @@
 }
 
 .time {
-
+    font-size: 10px;
+    font-weight: bold;
+    color: black;
+    position: absolute;
 }
