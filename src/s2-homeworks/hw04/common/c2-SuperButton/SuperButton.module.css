@@ -5,31 +5,50 @@
 }
 
 .secondary {
+    background-color: white;
+    color: #0066cc;
+
 }
 
 .default {
+    background-color: #0066cc;
+    color: white;
 }
 
 .red {
+    background-color: #cc0000;
+    color: white;
 }
 
 .default:hover {
+    background-color: blue;
+    color: white;
 }
 
 .red:hover {
+    background-color: red;
+    color: white;
 }
 
 .secondary:hover {
+    background-color: lightblue;
+    color: #0066cc;
 }
 
 
 .default:active {
+    background-color: steelblue;
+    color: white;
 }
 
 .secondary:active {
+    background-color: lightgrey;
+    color: #0066cc;
 }
 
 .red:active {
+    background-color: brown;
+    color: white;
 }
 
 .button:disabled {
