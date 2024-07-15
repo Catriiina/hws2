@@ -1,35 +1,56 @@
+/* Greeting.module.css */
+
 .greetingForm {
-}
-
-.inputAndButtonContainer {
-}
-
-.error {
-}
-
-.input {
-}
-
-.input:focus {
-}
-
-.errorInput {
-}
-
-.button {
-}
-
-.button:focus {
-}
-
-.button:active {
-}
-
-.button:disabled {
+    font-size: 16px;
 }
 
 .text {
+    font-size: 14px;
+    color: darkgray;
+}
+
+.inputAndButtonContainer {
+    display: flex; /* Использование Flexbox для контейнера инпута и кнопки */
+    align-items: center; /* Выравнивание по вертикали по центру */
+}
+
+.input {
+    font-size: 16px; /* Размер шрифта для инпута */
+    padding: 10px; /* Внутренний отступ */
+    flex-grow: 1; /* Расширение инпута, чтобы он занимал все доступное пространство */
+    height: 40px; /* Высота инпута */
+    margin-right: 10px; /* Отступ справа для инпута */
+}
+
+.errorInput {
+    font-size: 16px; /* Размер шрифта для инпута с ошибкой */
+    border: 1px solid red; /* Пример стилизации ошибки */
+    padding: 10px; /* Внутренний отступ */
+    flex-grow: 1; /* Расширение инпута, чтобы он занимал все доступное пространство */
+    height: 40px; /* Высота инпута */
+    margin-right: 10px; /* Отступ справа для инпута */
+}
+
+.button {
+    font-size: 16px; /* Размер шрифта для кнопки */
+    background-color: #0066cc; /* Зеленый фон */
+    color: white; /* Белый текст */
+    border: none; /* Без границы */
+    padding: 10px 20px; /* Отступы */
+    cursor: pointer; /* Указатель */
+}
+
+.button:disabled {
+    background-color: #ccc; /* Светло-серый фон */
+    color: #666; /* Темно-серый текст */
+    cursor: not-allowed; /* Запрещающий курсор */
+}
+
+.error {
+    font-size: 16px; /* Размер шрифта для сообщения об ошибке */
+    color: red; /* Пример стилизации сообщения об ошибке */
 }
 
 .greeting {
+    font-size: 16px; /* Размер шрифта для приветственного сообщения */
 }
