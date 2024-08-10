@@ -3,9 +3,12 @@
 }
 
 .hw {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Отступ снизу */
+
 }
 
 .hwTitle {
+    font-size: 20px;
+    margin: 20px;
 
 }

@@ -1,11 +1,19 @@
 .spanBlock {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
 }
 
 .span {
+ color: #0066cc;
 }
 
 .input {
+    height: 30px;
+    width: 135px;
 }
 
 .pen {
+
 }
