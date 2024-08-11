@@ -1,23 +1,29 @@
-.item {
-}
 
-.item:last-of-type {
-}
 
 .users {
-}
-
-.buttonsContainer {
-}
-
-.container {
+    border-collapse: collapse; /* Убирает двойные границы между ячейками */
+    width: 100%; /* Устанавливает ширину таблицы */
 }
 
 .thead {
+    background-color: lightgrey; /* Цвет фона заголовка */
 }
 
-.nameCol {
+.thead td {
+    padding: 10px; /* Отступы внутри ячеек заголовка */
+    border-bottom: 2px solid black; /* Граница под заголовком */
 }
 
-.ageCol {
+.item {
+    padding: 10px; /* Отступы внутри ячеек данных */
+    border-bottom: 1px solid #ddd; /* Граница между строками */
+}
+
+.item:last-of-type {
+    border-bottom: none; /* Удаляет границу у последней строки */
+}
+
+.nameCol, .ageCol {
+    padding: 10px; /* Отступы внутри ячеек */
+    text-align: left; /* Выравнивание текста по левому краю */
 }
