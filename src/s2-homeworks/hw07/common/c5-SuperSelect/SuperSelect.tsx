@@ -37,14 +37,11 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = e.target.value;
-        const selectedOption = options?.find(o => o.id === selectedValue);
-        if (selectedOption && onChangeOption) {
-            onChangeOption(selectedOption);
-        }
-        if (onChange) {
-            onChange(e);
+        if (onChangeOption) {
+            onChangeOption(Number(selectedValue)); // Преобразуем значение в число
         }
     }
+
 
 
     const finalSelectClassName = s.select + (className ? ' ' + className : '')

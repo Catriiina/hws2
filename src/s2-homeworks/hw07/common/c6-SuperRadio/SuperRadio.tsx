@@ -3,75 +3,71 @@ import React, {
     InputHTMLAttributes,
     DetailedHTMLProps,
     HTMLAttributes,
-} from 'react'
-import s from './SuperRadio.module.css'
+} from 'react';
+import s from './SuperRadio.module.css';
 
 type DefaultRadioPropsType = DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
->
-// тип пропсов обычного спана
+>;
+
 type DefaultSpanPropsType = DetailedHTMLProps<
     HTMLAttributes<HTMLSpanElement>,
     HTMLSpanElement
->
+>;
 
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
-    options?: any[]
-    onChangeOption?: (option: any) => void
-
-    spanProps?: DefaultSpanPropsType // пропсы для спана
-}
+    options?: any[];
+    onChangeOption?: (option: any) => void;
+    spanProps?: DefaultSpanPropsType; // Пропсы для спана
+};
 
 const SuperRadio: React.FC<SuperRadioPropsType> = ({
-    id,
-    name,
-    className,
-    options,
-    value,
-    onChange,
-    onChangeOption,
-    spanProps,
-    ...restProps
-}) => {
+                                                       id,
+                                                       name,
+                                                       className,
+                                                       options,
+                                                       value,
+                                                       onChange,
+                                                       onChangeOption,
+                                                       spanProps,
+                                                       ...restProps
+                                                   }) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         const selectedValue = e.target.value;
         if (onChangeOption) {
-            onChangeOption(selectedValue)
+            onChangeOption(Number(selectedValue)); // Преобразуем значение в число
         }
-        if (onChange){
-            onChange(e)
-        }
-    }
+    };
 
-    const finalRadioClassName = s.radio + (className ? ' ' + className : '')
-    const spanClassName = s.span + (spanProps?.className ? ' ' + spanProps.className : '')
+    const finalRadioClassName = s.radio + (className ? ' ' + className : '');
+    const spanClassName = s.span + (spanProps?.className ? ' ' + spanProps.className : '');
 
     const mappedOptions: any[] = options
         ? options.map((o) => (
-              <label key={name + '-' + o.id} className={s.label}>
-                  <input
-                      id={id + '-input-' + o.id}
-                      className={finalRadioClassName}
-                      type={'radio'}
-                      name={name}
-                      value={o.id}
-                      checked={o.id === value}
-                      onChange={onChangeCallback}
-                      {...restProps}
-                  />
-                  <span
-                      id={id + '-span-' + o.id}
-                      {...spanProps}
-                      className={spanClassName}
-                  >
+            <label key={name + '-' + o.id} className={s.label}>
+                <input
+                    id={id + '-input-' + o.id}
+                    className={finalRadioClassName}
+                    type={'radio'}
+                    name={name} // Связываем радио-кнопки в одну группу
+                    checked={o.id === value} // Определяем, какая кнопка выбрана
+                    value={o.id} // Значение радио-кнопки
+                    onChange={onChangeCallback}
+                    {...restProps}
+                />
+                <span
+                    id={id + '-span-' + o.id}
+                    {...spanProps}
+                    className={spanClassName}
+                >
                       {o.value}
                   </span>
-              </label>
-          ))
-        : []
+            </label>
+        ))
+        : [];
 
-    return <div className={s.options}>{mappedOptions}</div>
-}
+    return <div className={s.options}>{mappedOptions}</div>;
+};
 
-export default SuperRadio
+export default SuperRadio;
