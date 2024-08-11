@@ -1,4 +1,12 @@
+.radio {
+}
 
+.radio::before {
+}
+
+
+.radio:checked::before {
+}
 
 /* Стили для меток */
 .label {
