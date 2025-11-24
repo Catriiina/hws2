@@ -1,3 +1,21 @@
 .loader {
-    /*свг и/или анимация*/
+    width: 100px;
+    height: 100px;
+    left: 75px;
+}
+
+.circle {
+    fill: none;
+    stroke: #3498db;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-dasharray: 126; /* длина окружности 2πr = 2*3.14*20 ≈ 126 */
+    stroke-dashoffset: 126;
+    animation: fill 1.5s forwards; /* анимация 1,5 сек, не бесконечно */
+}
+
+@keyframes fill {
+    to {
+        stroke-dashoffset: 0; /* заполняем круг */
+    }
 }
