@@ -1,22 +1,42 @@
 .buttonsContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.buttonsContainer button {
+    white-space: nowrap;
+    min-width: 160px;
+    border: 2px solid #1976d2;
+    border-radius: 6px;
+    font-weight: 550;
 }
 
 .responseContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
 }
 
 .imageContainer {
+
 }
 
 .image {
 }
 
 .textContainer{
+
 }
 
 .code {
+    font-weight: 500;
+    font-size: 26px;
 }
 
 .text {
+    margin-top: 20px;
 }
 .info {
 }
